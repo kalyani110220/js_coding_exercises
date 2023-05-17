@@ -12,6 +12,13 @@
  */
 export const sumMultiples = (arr) => {
 	if (arr === undefined) throw new Error('arr is required');
+	return arr.reduce((sum, number) => {
+		if (number % 3 === 0 && number % 5 === 0) {
+		return sum + number;
+		}
+		return sum;
+	}, 0);
+	
 };
 
 /**
@@ -21,6 +28,16 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+	const validLetters = ['A', 'T', 'C', 'G'];
+  
+	for (let i = 0; i < str.length; i++) {
+	if (!validLetters.includes(str[i])) {
+		return false;
+	}
+	}
+	
+	return true;
+  
 };
 
 /**
