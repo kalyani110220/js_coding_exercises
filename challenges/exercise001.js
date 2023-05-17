@@ -44,11 +44,10 @@ export function getMiddleCharacter(str) {
 	if (str === undefined) throw new Error('str is required');const middleIndex = Math.floor(str.length / 2);
 
 	if (str.length % 2 === 0) {
-	  // Even length string
-	  return str.substring(middleIndex - 1, middleIndex + 1);
-	} else {
-	  // Odd length string
-	  return str.charAt(middleIndex);
+		return str.substring(middleIndex - 1, middleIndex + 1);
+	} 
+	else {
+	return str.charAt(middleIndex);
 	}
 	
 }
@@ -83,11 +82,11 @@ export function simpleFizzBuzz(n) {
 	if (n === undefined) throw new Error('n is required');
 	if (n % 3 === 0 && n % 5 === 0) {
 		return "fizzbuzz";
-	  } else if (n % 3 === 0) {
+	} else if (n % 3 === 0) {
 		return "fizz";
-	  } else if (n % 5 === 0) {
+	} else if (n % 5 === 0) {
 		return "buzz";
-	  } else {
+	} else {
 		return n;
-	  }
+	}
 }
