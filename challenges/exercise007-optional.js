@@ -8,6 +8,15 @@
  */
 export const sumDigits = (n) => {
 	if (n === undefined) throw new Error('n is required');
+	const numString = String(n);
+	let sum = 0;
+	for (let i = 0; i < numString.length; i++) {
+	const digit = Number(numString[i]);
+	sum += digit;
+	}
+  
+	return sum;
+  
 };
 
 /**
@@ -87,4 +96,29 @@ export const hexToRGB = (hexStr) => {
  */
 export const findWinner = (board) => {
 	if (board === undefined) throw new Error('board is required');
+	const winningCombinations = [
+		// Rows
+		[board[0][0], board[0][1], board[0][2]],
+		[board[1][0], board[1][1], board[1][2]],
+		[board[2][0], board[2][1], board[2][2]],
+		// Columns
+		[board[0][0], board[1][0], board[2][0]],
+		[board[0][1], board[1][1], board[2][1]],
+		[board[0][2], board[1][2], board[2][2]],
+		// Diagonals
+		[board[0][0], board[1][1], board[2][2]],
+		[board[0][2], board[1][1], board[2][0]],
+	];
+	
+	for (const combination of winningCombinations) {
+		if (
+		combination[0] !== null &&
+		combination[0] === combination[1] &&
+		combination[1] === combination[2]
+		) {
+		return combination[0];
+		}
+	}
+	
+	return null;
 };
