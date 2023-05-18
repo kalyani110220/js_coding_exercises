@@ -13,30 +13,30 @@ describe('colours', () => {
 	});
 });
 
-describe('shoppingList', () => {
-	test('returns a list with an extra item', () => {
-		const list = [
-			'one apple',
-			'two dozen organic eggs',
-			'cucumber',
-			'bread',
-		];
-		const newItem = ['earl grey tea'];
-		expect(shoppingList(list, newItem)).toEqual([
-			'one apple',
-			'two dozen organic eggs',
-			'cucumber',
-			'bread',
-			'earl grey tea',
-		]);
-	});
+	describe('shoppingList', () => {
+		test('returns a list with an extra item', () => {
+			const list = [
+				'one apple',
+				'two dozen organic eggs',
+				'cucumber',
+				'bread',
+			];
+			const newItem = ['earl grey tea'];
+			expect(shoppingList(list, newItem)).toEqual([
+				'one apple',
+				'two dozen organic eggs',
+				'cucumber',
+				'bread',
+				'earl grey tea',
+			]);
+		});
 
-	test('returns an empty list with new items added to it', () => {
-		const list = [];
-		const newItem = ['jelly', 'melon', 'pear'];
-		expect(shoppingList(list, newItem)).toEqual(['jelly', 'melon', 'pear']);
+		test('returns an empty list with new items added to it', () => {
+			const list = [];
+			const newItem = ['jelly', 'melon', 'pear'];
+			expect(shoppingList(list, newItem)).toEqual(['jelly', 'melon', 'pear']);
+		});
 	});
-});
 
 describe('highestNumber', () => {
 	test('returns the highest number', () => {
