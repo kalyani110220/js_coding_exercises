@@ -47,6 +47,22 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+	let complementaryStr = '';
+  
+	for (let i = 0; i < str.length; i++) {
+	const base = str[i];
+	if (base === 'A') {
+		complementaryStr += 'T';
+	} else if (base === 'T') {
+	complementaryStr += 'A';
+	} else if (base === 'C') {
+		complementaryStr += 'G';
+	} else if (base === 'G') {
+		complementaryStr += 'C';
+	}
+	}
+	
+	return complementaryStr;
 };
 
 /**
@@ -72,6 +88,13 @@ export const isItPrime = (n) => {
 export const createMatrix = (n, fill) => {
 	if (n === undefined) throw new Error('n is required');
 	if (fill === undefined) throw new Error('fill is required');
+	const matrix = [];
+  for (let i = 0; i < n; i++) {
+const row = Array(n).fill(fill);
+matrix.push(row);
+  }
+
+  return matrix;
 };
 
 /**
@@ -89,4 +112,8 @@ export const createMatrix = (n, fill) => {
 export const areWeCovered = (staff, day) => {
 	if (staff === undefined) throw new Error('staff is required');
 	if (day === undefined) throw new Error('day is required');
+	const staffCount = staff.filter(staffMember => staffMember.rota.includes(day)).length;
+  const minStaffCount = 3; // Assuming a minimum of 3 staff members needed
+  
+  return staffCount >= minStaffCount;
 };
