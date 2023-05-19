@@ -32,8 +32,14 @@ export const createRange = (start, end, step) => {
 	if (end === undefined) throw new Error('end is required');
 	if (step === undefined)
 		console.log(
-			"FYI: Optional step parameter not provided. Remove this check once you've handled the optional step!"
-		);
+			"FYI: Optional step parameter not provided.");
+		step = 1;
+		const range = [];
+		for (let i = start; i <= end; i += step) {
+		range.push(i);
+		}
+		
+	return range;
 };
 
 /**
@@ -67,7 +73,16 @@ export const createRange = (start, end, step) => {
  */
 export const getScreentimeAlertList = (users, date) => {
 	if (users === undefined) throw new Error('users is required');
-	if (date === undefined) throw new Error('date is required');
+	if (date === undefined) throw new Error('date is required');  const alertList = [];
+
+	users.forEach((user) => {
+	const screentime = user.screentime[date];
+	if (screentime && screentime > 100) {
+		alertList.push(user.username);
+	}
+	});
+  
+	return alertList;
 };
 
 /**
@@ -82,6 +97,9 @@ export const getScreentimeAlertList = (users, date) => {
  */
 export const hexToRGB = (hexStr) => {
 	if (hexStr === undefined) throw new Error('hexStr is required');
+	const colorCode = "#FF1133";
+	const rgb = hexToRGB(colorCode);
+	return rgb;
 };
 
 /**
