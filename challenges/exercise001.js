@@ -41,7 +41,8 @@ export function getSalePrice(originalPrice, reduction) {
 
 
 export function getMiddleCharacter(str) {
-	if (str === undefined) throw new Error('str is required');const middleIndex = Math.floor(str.length / 2);
+	if (str === undefined) throw new Error('str is required');
+	const middleIndex = Math.floor(str.length / 2);
 
 	if (str.length % 2 === 0) {
 		return str.substring(middleIndex - 1, middleIndex + 1);
