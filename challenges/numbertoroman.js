@@ -27,11 +27,8 @@ export function numberToRoman(num, numeralToDigitMap) {
     } else {
       throw new Error('Invalid Roman numeral');
     }
-  }
-//   const numeral ='I';
-//   const digit = numeralToDigit(numeral);
-// console.log(digit); // Output: 1
-  
+}
+     
   
 
 
