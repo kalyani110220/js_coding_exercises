@@ -10,10 +10,28 @@ export function numberToRoman(num, numeralToDigitMap) {
   
     return result;
   }
-  export function numeralToDigit()
-  {
-    return 1;
+
+  export function numeralToDigit(numeral) {
+    const numeralToDigitMap = {
+      I: 1,
+      V: 5,
+      X: 10,
+      L: 50,
+      C: 100,
+      D: 500,
+      M: 1000,
+    };
+  
+    if (numeral in numeralToDigitMap) {
+      return numeralToDigitMap[numeral];
+    } else {
+      throw new Error('Invalid Roman numeral');
+    }
   }
+//   const numeral ='I';
+//   const digit = numeralToDigit(numeral);
+// console.log(digit); // Output: 1
+  
   
 
 

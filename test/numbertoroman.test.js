@@ -1,5 +1,7 @@
 import {
-    numberToRoman
+    numberToRoman,
+    numeralToDigit,
+
   } from "../challenges/numbertoroman";
 
   describe('numberToRoman', () => {
@@ -38,5 +40,12 @@ import {
       expect(numberToRoman(10, numeralToDigitMap)).toBe('X');
     });
 });
+
+describe("numeralToDigit", () => {
+    it('should convert numeral I to digit 1', () => {
+        expect(numeralToDigit('I')).toBe(1);
+    });
+});
+  
   
   
