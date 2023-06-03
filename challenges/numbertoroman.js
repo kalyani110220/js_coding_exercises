@@ -10,6 +10,10 @@ export function numberToRoman(num, numeralToDigitMap) {
   
     return result;
   }
+  export function numeralToDigit()
+  {
+    return 1;
+  }
   
 
 
